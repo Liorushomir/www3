@@ -30,15 +30,15 @@ function get_csv_file(ev){
     return csv_file;
 }
 
-/*
-export function reduceOpacity(ev){
+
+function reduceOpacity(ev){
     ev.target.style.opacity = 0.5;
 }
 
-export function resetOpacity(ev){
+function resetOpacity(ev){
     ev.target.style.opacity = 1;
 }
-*/
+
 
 //var csv is the CSV file with headers
 function csv_to_json(csv_file_as_str){

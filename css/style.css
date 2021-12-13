@@ -14,6 +14,8 @@ body{
     left:20%;
     width: 30%;
     height: 40%;
+    /*width: 200px
+    height: 300px;*/
     padding: 2%;
     margin: 10%;
     display: flex;
@@ -27,13 +29,28 @@ body{
     border-radius: 10%;
 }
 
+.dropzone:hover{
+    opacity: 0.5;
+}
+
+.csv_dropzone_visuals{
+    /*make it non draggable*/
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/*
 .drop-zone__input{
     padding: 20px;
     align-items: center;
     overflow: hidden;
     text-align: center;
     position: relative;
-    /*display: none;*/
+
 }
 
 #dropdown-zone__thumb{
@@ -74,9 +91,11 @@ body{
 .drop-zone__button:hover{
     background-color: #008CBA;
     color: white;
-}
-
-
+}*/
+/*
+.csv_dropzone_visuals * {
+    pointer-events: none;
+}*/
 
 
 
