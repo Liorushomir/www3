@@ -1,17 +1,21 @@
-.body{
-    /*background-image: url("background.jpg");*/
-    height: 1024px;
-    background-size: cover;
+html,
+body{
+    height: 100%;
+    background-image: url("background.jpg");
     background-color: #879ba3;
+    background-size: cover;
+    user-select: none;
+
 }
 
-.drop-zone{
+
+.dropzone{
     position:absolute;
-    left:25%;
-    width: 400px;
-    height: 300px;
-    padding: 5px;
-    margin: 100px;
+    left:20%;
+    width: 30%;
+    height: 40%;
+    padding: 2%;
+    margin: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,8 +23,8 @@
     text-align: center;
     font-family: sans-serif;
     cursor: pointer;
-    border: 4px dashed #697e87;
-    border-radius: 10px;
+    border: 10px dashed #697e87;
+    border-radius: 10%;
 }
 
 .drop-zone__input{
@@ -32,7 +36,7 @@
     /*display: none;*/
 }
 
-.dropdown-zone__thumb{
+#dropdown-zone__thumb{
     height: 100px;
     max-width: 100px;
     border-radius: 10px;
@@ -72,6 +76,13 @@
     color: white;
 }
 
-.upload-pic{
-    height: 100px;
-}
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,10 @@
-// import {tabulator} form
+// import { < export func names>} form './module_path.js'
+
+// import tabulator from "./tabulator-master/src/js/core/Tabulator";
+//
+// const t = tabulator;
+
+
 //DRAG&DROP
 function allowDrop(ev) {
     ev.preventDefault();
@@ -22,10 +28,16 @@ function dropHandler(ev) {
         console.log("Cannot add more than one item");
         return;
     }
-    let csvfile = ev.dataTransfer.files[0]
+    // TODO: validate file_type is csv
 
-    console.log(csvfile)
-    show_image(csvfile)
+    let csv_file = ev.dataTransfer.files[0];
+    let csv_file_as_str = ev.dataTransfer.files[0]
+    console.log(csv_file, csv_file.type);
+    console.log(csv_file_as_str, csv_file_as_str.type);
+    var json_file = csv_to_json(csv_file_as_str);
+    console.log(json_file);
+
+    var table = new Tabulator(json_file);
 
 }
 function reduceOpacity(ev){
@@ -37,47 +49,48 @@ function resetOpacity(ev){
 }
 
 //Button load
-
 function onclickHandler(ev){
     console.log("Waiting to load file")
 }
 
+//var csv is the CSV file with headers
+function csv_to_json(csv_file_as_str){
+    console.log(csv_file.type)
 
+    // var lines=csv_file.split("\n");
+    let config={
+        delimiter: ",",	// auto-detect
+        newline: "\n\r",	// auto-detect
+        complete: undefined,
 
-
-
-
-
-
-
-
-
-
-function imageHandler(e2) {
-    var store = document.getElementById('imgstore');
-    store.innerHTML = '<img src="' + e2.target.result + '">';
-}
-
-function loadimage(e1)
-{
-    var filename = e1.target.files[0];
-    var fr = new FileReader();
-    fr.onload = imageHandler;
-    fr.readAsDataURL(filename);
-}
-
-function show_image(image_input) {
-    console.log("Showing image")
-    let reader = new FileReader();
-    reader.readAsDataURL(image_input)
-    let uploaded_image = reader.result;
-    console.log(image_input);
-    console.log(reader);
-    reader.onload = function(e){
-        // let fileURL = reader.result;
-        console.log(reader.result);
     }
-    var fileURL = reader.result;
-    document.write("img src="+ reader +">")
+    var lines=Papa.parse(csv_file);
 
+    var result = [];
+
+    var headers=lines[0].split(",");
+
+    for(var i=1;i<lines.length;i++){
+
+        var obj = {};
+        var currentline=lines[i].split(",");
+
+        for(var j=0;j<headers.length;j++){
+            obj[headers[j]] = currentline[j];
+        }
+
+        result.push(obj);
+
+    }
+
+    //return result; //JavaScript object
+    return JSON.stringify(result); //JSON
 }
+
+function callback_complete_parsing(){
+    console.log("Done parsing")
+}
+
+
+
+
