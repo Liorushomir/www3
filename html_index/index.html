@@ -8,8 +8,14 @@
     <title>AirBnB</title>
 </head>
 <body class="body">
-   <nav>
-     <button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button>
+   <nav class="navigator">
+       <div class="mainMenu">
+           <ul id="nav_list">
+          <li class="nav_elem"><button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button></li>
+               <li class="nav_elem"> <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button></li>
+           </ul>
+       </div>
+
    </nav>
 
 
@@ -18,9 +24,7 @@
         <header ><B>Drag and drop csv file to upload</B></header>
     </div>
 
-   <div class="mainMenu">
-       <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button>
-   </div>
+
 
    <div id="data_table_div" class="mainMenu">
    </div>

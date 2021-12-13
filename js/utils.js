@@ -12,7 +12,12 @@ function setMainMenuDisplay(display) {
     for (let i = 0; i < mainMenuElements.length; i++) {
         mainMenuElements[i].style.display = display;
     }
-    table.replaceData(g_csv_file.data)
+    table.replaceData(g_csv_file.data).then(function() {
+        table.setPageSize(10);
+    })
+        .catch(function(error){
+            console.log(error)
+        })
 }
 
 function setDropZoneDisplay(display) {

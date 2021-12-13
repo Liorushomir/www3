@@ -68,12 +68,36 @@ body{
     overflow: hidden;
     cursor: pointer;
     transition-duration: 0.4s;
-    margin: 20px;
+    margin: 10px;
 }
 .button:hover{
     background-color: lightskyblue; /* Green */
     color: white;
 }
 
+#data_table_div{
+    align-content: center;
+    align-self: center;
+    position: center;
+    max-width: 80%;
+    /*height: 500px;*/
+    min-height: 100px;
+    min-width: 100px;
+   /* max-height: 300px;*/
+    margin: auto;
 
 
+}
+
+
+#nav_list{
+    list-style-type: none;
+}
+
+.nav_elem{
+    display: inline-block;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+    white-space: normal;
+}
