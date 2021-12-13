@@ -9,14 +9,18 @@
 </head>
 <body class="body">
    <nav>
-     <button id='goto_upload_view_btn' type="button">Upload Another File</button>
+     <button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button>
    </nav>
 
 
    <div id="csv_dropzone" class="dropzone">
-        <img class="csv_dropzone_visuals" src="../images/upload.png" alt="upload.png" height="100">
-        <header class="csv_dropzone_visuals"><B>Drag and drop csv file to upload</B></header>
+        <img  src="../images/upload.png" alt="upload.png" height="100">
+        <header ><B>Drag and drop csv file to upload</B></header>
     </div>
+
+   <div class="mainMenu">
+       <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button>
+   </div>
 </body>
 
 <script src="https://unpkg.com/papaparse@5.0.2/papaparse.min.js" integrity="sha384-ZUWi4n7PYOuSjRGhFn9pzH++P1J4x0fPK6MaN90xycvCud2xVNwDnmPPOUKjpVsY" crossorigin="anonymous"></script>

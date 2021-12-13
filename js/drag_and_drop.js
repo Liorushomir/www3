@@ -50,6 +50,7 @@ csv_dropzone.addEventListener("drop", (event)=> {
         alert("The uploaded file must be a csv file!")
         return
     }
+    g_raw_csv_file = file
     Papa.parse(file, {
         header: true, complete: function (results) {
             g_csv_file = results

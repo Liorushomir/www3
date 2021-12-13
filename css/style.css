@@ -9,7 +9,7 @@ body{
 }
 
 
-.dropzone{
+#csv_dropzone{
     position:absolute;
     left:20%;
     width: 30%;
@@ -41,7 +41,6 @@ body{
 
 .csv_dropzone_visuals{
     /*make it non draggable*/
-    user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -49,7 +48,7 @@ body{
     -ms-user-select: none;
 }
 
-#goto_upload_view_btn{
+.button{
    display: none;
     --color: #fff;
     --background: #2B3044;
@@ -66,9 +65,9 @@ body{
     overflow: hidden;
     cursor: pointer;
     transition-duration: 0.4s;
+    margin: 20px;
 }
-#goto_upload_view_btn:hover{
-    color: #AAA;
+.button:hover{
     background-color: lightskyblue; /* Green */
     color: white;
 }
