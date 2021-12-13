@@ -8,6 +8,9 @@ body{
 
 }
 
+.mainMenu {
+    display:none;
+}
 
 #csv_dropzone{
     position:absolute;

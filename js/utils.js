@@ -12,6 +12,7 @@ function setMainMenuDisplay(display) {
     for (let i = 0; i < mainMenuElements.length; i++) {
         mainMenuElements[i].style.display = display;
     }
+    table.replaceData(g_csv_file.data)
 }
 
 function setDropZoneDisplay(display) {
@@ -32,5 +33,6 @@ function switch_to_upload_page(){
     setMainMenuDisplay('none');
     setDropZoneDisplay('block');
     g_csv_file = undefined
+
 
 }
