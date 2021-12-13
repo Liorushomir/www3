@@ -1,67 +1,51 @@
 // import { < export func names>} form './module_path.js'
 
-// import tabulator from "./tabulator-master/src/js/core/Tabulator";
-//
-// const t = tabulator;
 
+// TODO: returns csv if file is validated else undefined
+export function validate_dropped_file(ev) {
+    //1. validate only 1 file was dropped
+    //2. file mime-type is csv, maybe xls too (there is a functions for that)
+    //3. maybe file contains specific headers
 
-//DRAG&DROP
-function allowDrop(ev) {
-    ev.preventDefault();
-    console.log("allowing drop")
-    // file = ev.file
-    // console.log(file)
-}
-
-function onDragHandler(ev) {
-    ev.preventDefault();
-    console.log('File(s) in drop zone');
-    // ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function dropHandler(ev) {
-    ev.preventDefault();
-    console.log("handling drop")
-    ev.target.style.opacity = 1;
-    if (ev.dataTransfer.files.length > 1){
+    if (ev.dataTransfer.files.length > 1) {
 
         console.log("Cannot add more than one item");
-        return;
+        return undefined;
     }
-    // TODO: validate file_type is csv
+    var csv_file = get_csv_file(ev);
 
-    let csv_file = ev.dataTransfer.files[0];
-    let csv_file_as_str = ev.dataTransfer.files[0]
-    console.log(csv_file, csv_file.type);
-    console.log(csv_file_as_str, csv_file_as_str.type);
-    var json_file = csv_to_json(csv_file_as_str);
-    console.log(json_file);
 
-    var table = new Tabulator(json_file);
-
+    return csv_file;
 }
-function reduceOpacity(ev){
+
+function get_csv_file(ev){
+    let csv_file = ev.dataTransfer.files[0];
+    console.log(csv_file, csv_file.type);
+    return csv_file;
+}
+
+
+export function reduceOpacity(ev){
     ev.target.style.opacity = 0.5;
 }
 
-function resetOpacity(ev){
+export function resetOpacity(ev){
     ev.target.style.opacity = 1;
 }
 
-//Button load
-function onclickHandler(ev){
-    console.log("Waiting to load file")
-}
 
 //var csv is the CSV file with headers
 function csv_to_json(csv_file_as_str){
     console.log(csv_file.type)
 
     // var lines=csv_file.split("\n");
+    //src: https://www.papaparse.com/docs#config
     let config={
+        //configuration for the parsing,
+        // not sure in anything else needs to be added
         delimiter: ",",	// auto-detect
         newline: "\n\r",	// auto-detect
-        complete: undefined,
+        complete: callback_complete_parsing,
 
     }
     var lines=Papa.parse(csv_file);
