@@ -1,9 +1,7 @@
 
 
-let entered_dropzone_counter=0 //used to prevent opacity from changing when "leaving dragzone because entering children"
 
-const csv_dropzone = document.getElementById('csv_dropzone')
-const csv_dropzone_visual_elems = document.querySelectorAll('.csv_dropzone_visuals');
+let entered_dropzone_counter=0 //used to prevent opacity from changing when "leaving dragzone because entering children"
 
 
 
@@ -11,6 +9,11 @@ const csv_dropzone_visual_elems = document.querySelectorAll('.csv_dropzone_visua
 
 /* events fired on the draggable target */
 
+csv_dropzone.addEventListener("dragover", (event) => {
+    // highlight potential drop target when the draggable element enters it
+    event.preventDefault()
+    event.target.style.opacity = '0.5';
+});
 
 csv_dropzone.addEventListener("dragenter", (event) => {
     // highlight potential drop target when the draggable element enters it
@@ -34,18 +37,25 @@ csv_dropzone.addEventListener("dragleave", (event) => {
 csv_dropzone.addEventListener("drop", (event)=> {
     // prevent default action (open as link for some elements)
     event.preventDefault()
-    // move dragged elem to the selected drop target
-    if (event.target.className === "dropzone") {
-        event.target.style.background = "";
-        dragged.parentNode.removeChild( dragged );
-        event.target.appendChild( dragged );
-        console.log("Dropped file")
-        let csv_file = validate_dropped_file(ev)
-        console.log(csv_file.type, csv_file)
+    //csv_dropzone.style.opacity=1;
+
+
+    let files = event.dataTransfer.files
+    if(files.length > 1){
+        alert("You must upload a single file!")
+        return
     }
-    else{
-        console.log("Failed to drop")
+    let file = files[0]
+    if(!file.name.endsWith(".csv")){
+        alert("The uploaded file must be a csv file!")
+        return
     }
+    Papa.parse(file, {
+        header: true, complete: function (results) {
+            g_csv_file = results
+            switch_to_main_page()
+        }
+    });
 });
 
 csv_dropzone_visual_elems.forEach(el => el.addEventListener('dragleave', event => {
