@@ -1,4 +1,4 @@
-import {validate_dropped_file} from "./utils";
+
 
 var dragged;
 

@@ -2,6 +2,12 @@
 
 
 // TODO: returns csv if file is validated else undefined
+
+function test_func(){
+    console.log("TESTING")
+}
+
+/*
 export function validate_dropped_file(ev) {
     //1. validate only 1 file was dropped
     //2. file mime-type is csv, maybe xls too (there is a functions for that)
@@ -16,7 +22,7 @@ export function validate_dropped_file(ev) {
 
 
     return csv_file;
-}
+}*/
 
 function get_csv_file(ev){
     let csv_file = ev.dataTransfer.files[0];
@@ -24,7 +30,7 @@ function get_csv_file(ev){
     return csv_file;
 }
 
-
+/*
 export function reduceOpacity(ev){
     ev.target.style.opacity = 0.5;
 }
@@ -32,7 +38,7 @@ export function reduceOpacity(ev){
 export function resetOpacity(ev){
     ev.target.style.opacity = 1;
 }
-
+*/
 
 //var csv is the CSV file with headers
 function csv_to_json(csv_file_as_str){
