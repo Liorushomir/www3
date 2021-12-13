@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <meta charset="UTF-8">
+    <title>AirBnB</title>
+
+    <script src="./leaflet/leaflet.js"></script>
+    <script src="main.js" defer></script>
+
+    <link href="https://unpkg.com/tabulator-tables@4.8.1/dist/css/tabulator.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.1/dist/js/tabulator.min.js"></script>
+</head>
+<body class="body">
+    <div class=drop-zone id="drop_zone" ondragenter="reduceOpacity(event)" ondragleave="resetOpacity(event)"
+        ondrop="dropHandler(event)" ondragover="allowDrop(event)" ondrag="onDragHandler()">
+        <img class="upload-pic" src="upload.png" alt="upload.png"></img>
+            <span class="drop-zone__prompt"></span>
+            <header>Drag and drop file to upload</header>
+            <span>Or</span>
+<!--        <button class="drop-zone__button" onclick="onclickHandler(event)">Select file</button>-->
+
+    </div>
+
+</body>
+</html>

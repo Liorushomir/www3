@@ -1,0 +1,77 @@
+.body{
+    /*background-image: url("background.jpg");*/
+    height: 1024px;
+    background-size: cover;
+    background-color: #879ba3;
+}
+
+.drop-zone{
+    position:absolute;
+    left:25%;
+    width: 400px;
+    height: 300px;
+    padding: 5px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+    cursor: pointer;
+    border: 4px dashed #697e87;
+    border-radius: 10px;
+}
+
+.drop-zone__input{
+    padding: 20px;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    /*display: none;*/
+}
+
+.dropdown-zone__thumb{
+    height: 100px;
+    max-width: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+}
+
+.dropdown-zone__thumb::after{
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #222222;
+    }
+
+.drop-zone__button{
+    border: none;
+    color: #333333;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.drop-zone__button:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+.upload-pic{
+    height: 100px;
+}
