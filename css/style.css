@@ -1,7 +1,7 @@
 html,
 body{
     height: 100%;
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/airbnb_background.jpg");
     background-color: #879ba3;
     background-size: cover;
     user-select: none;
@@ -15,16 +15,12 @@ body{
 
 #csv_dropzone{
     position:absolute;
-    left:20%;
-    width: 30%;
-    height: 40%;
-    /*width: 200px
-    height: 300px;*/
-    min-height: 100px;
-    min-width: 100px;
+    left:25%;
+    min-height: 300px;
+    min-width: 400px;
 
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 500px;
+    max-width: 600px;
 
     padding: 2%;
     margin: 10%;
@@ -35,7 +31,8 @@ body{
     text-align: center;
     font-family: sans-serif;
     cursor: pointer;
-    border: 10px dashed #697e87;
+    /*border: 10px dashed #697e87;*/
+    border: 10px dashed #1a1a1a;
     border-radius: 10%;
 }
 
