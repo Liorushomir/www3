@@ -15,6 +15,7 @@ function removeAllPopups() {
     for (let popup of popups) {
         popup.remove();
     }
+    removepopupCard();
 }
 
 map.on('dragstart', ()=> {

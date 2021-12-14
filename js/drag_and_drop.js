@@ -10,28 +10,19 @@ csv_dropzone.addEventListener("dragover", (event) => {
 
 csv_dropzone.addEventListener("dragenter", (event) => {
     // highlight potential drop target when the draggable element enters it
-    event.preventDefault()
-    console.log("dragenter")
-    entered_dropzone_counter++
-    if (mouseDown === 1){
-        console.log("Mouse is down")
-        event.target.style.opacity = '0.5';
-    }
-    if (mouseDown === 0){
-        console.log("Mouse is up")
-        event.target.style.opacity = '0.5';
-    }
+    event.preventDefault();
+    console.log("dragenter");
+    entered_dropzone_counter++;
 });
 
 csv_dropzone.addEventListener("dragleave", (event) => {
     // reset background of potential drop target when the draggable element leaves it
-    event.preventDefault()
-    console.log("dragleave")
-    entered_dropzone_counter--
+    event.preventDefault();
+    console.log("dragleave");
+    entered_dropzone_counter--;
 
     if(entered_dropzone_counter === 0){
         event.target.style.opacity = '1';
-
     }
 });
 
@@ -57,8 +48,9 @@ csv_dropzone.addEventListener("drop", (event)=> {
     Papa.parse(file, {
         header: true, complete: function (results) {
             g_csv_file = results;
-            console.log(results);
-            if (validate_headers(results)){
+            console.log("results", results);
+            console.log("results", results.meta.fields);
+            if (validate_headers(results.meta.fields)){
                 switch_to_main_page();
             }
             else{
@@ -97,8 +89,8 @@ csv_dropzone_visual_elems.forEach(el => el.addEventListener('dragover', event =>
 
 }));
 
-function validate_headers(json_file){
-    console.log(json_file)
+function validate_headers(json_headers){
+    console.log(json_headers)
     let headers = [
         "", "id","name","host_id","host_name","neighbourhood_group",
         "neighbourhood", "latitude","longitude","room_type","price",
@@ -106,16 +98,15 @@ function validate_headers(json_file){
         "reviews_per_month","calculated_host_listings_count",
         "availability_365",
     ]
-    let keys = Object.keys(json_file.data[0]);
     for (let i = 0; i < headers.length; i++){
         let found_key = false;
-        for (let j = 0; j < headers.length && !found_key; j++){
-            found_key = (headers[i] === keys[j]);
+        for (let j = 0; j < json_headers.length && !found_key; j++){
+            found_key = (headers[i] === json_headers[j]);
         }
         if (!found_key){
-            alert("missing key \"" + headers[i] + "\"");
             return false;
         }
     }
+    console.log("validated headers")
     return true;
 }
