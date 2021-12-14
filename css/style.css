@@ -8,8 +8,9 @@ body{
 
 }
 
-.mainMenu {
+.mainMenu{
     display:none;
+    margin:30px;
 }
 
 #csv_dropzone{
@@ -87,6 +88,15 @@ body{
     margin: auto;
 
 
+}
+
+
+#map_div {
+    height: 400px;
+    width: 80%;
+    margin:auto;
+    margin-block-start: 30px;
+    margin-block-end: 30px;
 }
 
 

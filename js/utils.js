@@ -14,6 +14,8 @@ function setMainMenuDisplay(display) {
     }
     table.replaceData(g_csv_file.data).then(function() {
         table.setPageSize(10);
+        map.resize()
+
     })
         .catch(function(error){
             console.log(error)

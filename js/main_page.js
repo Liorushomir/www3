@@ -2,49 +2,7 @@
 
 
 
-const table = new Tabulator("#data_table_div", {
-    //data:tabledata, //assign data to table
-    autoColumns:true, //create columns from data field names
-    layout:"fitColumns",
-    pagination:"local",
 
-    columns: [
-        {
-            title:'Name',
-            field:"name",
-            formatter:'plaintext ',
-            headerFilter:true
-
-        },
-        {
-            title:'Host ID',
-            field:'host_id',
-            formatter:'plaintext '
-        },
-        {
-            title:'ID',
-            field:'id',
-            formatter:'plaintext '
-        },
-        {
-            title:'Neighbourhood',
-            field:'neighbourhood',
-            formatter:'plaintext '
-        },
-        {
-            title:'Room Type',
-            field:'room_type',
-            formatter:'plaintext '
-
-        },
-        {
-            title:'Price',
-            field:'price',
-            formatter:'money',
-            formatterParams:{symbol:'$', symbolAfter:true}
-        }
-    ]
-});
 
 goto_upload_btn.addEventListener('click', ev => {
     ev.preventDefault()
