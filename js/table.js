@@ -5,7 +5,7 @@ const table = new Tabulator("#data_table_div", {
     pagination:"local",
     selectable:1,
 
-    rowSelected:function(row){rowUnSelected(row)},
+    rowDeSelected:function(row){rowUnSelected(row)},
     rowSelected:function(row){rowSelected(row)},
 
     columns: [
