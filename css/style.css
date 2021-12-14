@@ -134,23 +134,24 @@ body{
     justify-items: center;
     font-family: sans-serif;
     font-size: larger;
-    background-color: #879ba3;
+    color: #1a1a1a;
+    background-color: #b2534c;
 
 
     position:absolute;
     left:20%;
     min-height: 200px;
-    min-width: 400px;
+    min-width: 500px;
 
     max-height: 500px;
-    max-width: 600px;
+    max-width: 800px;
 
     padding: 2%;
     margin: 10%;
     flex-direction: column;
     align-items: center;
     text-align: left;
-    justify-content: center;
+    /*justify-content: center;*/
     cursor: default;
     border: 5px #1a1a1a;
     border-radius: 3%;

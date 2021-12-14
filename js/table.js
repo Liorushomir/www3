@@ -104,12 +104,7 @@ function fillInfopopupCard(row){
         if (key === ""){
             continue;
         }
-        popup_card.innerHTML += "<li>" + key + " : " + value + "</li>"
-        if (info.hasOwnProperty(key)) {
-            console.log(`Property ${key} is NOT from prototype chain`);
-        } else {
-            console.log(`Property ${key} is from prototype chain`);
-        }
+        popup_card.innerHTML += "<li>" + key.replace('_', ' ') + " : " + value.replace('_', ' ' ) + "</li>"
     }
 }
 
