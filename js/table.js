@@ -73,7 +73,7 @@ function rowSelected(row){
     }
 
     let offsetHeight = document.getElementById('map_div').offsetHeight;
-    const popup = new mapboxgl.Popup({ closeOnClick: true, anchor:'center' })
+    const popup = new mapboxgl.Popup({ closeOnClick: true, anchor:'right' })
         .setLngLat([x, y])
         .setHTML(popup_html)
         .addTo(map);

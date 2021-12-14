@@ -26,6 +26,8 @@ function setMainMenuDisplay(display) {
 
             const el = document.createElement('div')
             el.className='marker'
+
+
             new mapboxgl.Marker(el).setLngLat([x,y]).addTo(map)
         }
 

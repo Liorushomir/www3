@@ -115,16 +115,18 @@ body{
 .mapboxgl-marker {
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    border:1px solid gray;
-    background-color:lightblue;
+    /*border-radius: 50%;*/
+
+    /*background-color:lightblue;*/
+    background-image: url('../images/map_marker_icon.png');
+    background-size:100%;
 
 }
 
 .mapboxgl-popup{
     #overflow-y: scroll !important;
-    transform:none !important;
-    top: 0%;
-    left: 0%;
+    /*transform:none !important;
+    /*top: 0%;
+    /*left: 0%;*/
 
 }
