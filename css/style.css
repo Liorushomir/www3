@@ -16,7 +16,7 @@ body{
 #csv_dropzone{
     position:absolute;
     left:25%;
-    min-height: 300px;
+    min-height: 200px;
     min-width: 400px;
 
     max-height: 500px;
@@ -30,7 +30,7 @@ body{
     justify-content: center;
     text-align: center;
     font-family: sans-serif;
-    cursor: pointer;
+    cursor: default;
     /*border: 10px dashed #697e87;*/
     border: 10px dashed #1a1a1a;
     border-radius: 10%;
