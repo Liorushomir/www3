@@ -67,22 +67,24 @@ function rowSelected(row){
         if(field == ""){
             continue
         }
-        popup_html = popup_html+ field + " : " + row_data[field] + "<br>"
+        field_name = fieldToName(field)
+
+        popup_html = popup_html+ "<b><u>"+ field_name + "</b></u>" + ": " + row_data[field] + "<br>"
     }
 
-    /*
-    for(column of columns){
-        let title = column.getDefinition().title
-        let field = column.getDefinition().field
-
-        popup_html = popup_html+ title + " : " + row_data[field] + "\n"
-    }*/
     let offsetHeight = document.getElementById('map_div').offsetHeight;
     const popup = new mapboxgl.Popup({ closeOnClick: true, anchor:'center' })
         .setLngLat([x, y])
         .setHTML(popup_html)
         .addTo(map);
 
+}
+
+function fieldToName(field){
+    let res = field.charAt(0).toUpperCase() + field.slice(1);
+    res = res.replace("_", " ")
+
+    return res
 }
 
 function rowUnSelected(row){
