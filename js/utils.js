@@ -9,7 +9,17 @@ const download_csv_btn =  document.getElementById('download_csv_btn')
 function setMainMenuDisplay(display) {
     let mainMenuElements = document.getElementsByClassName('mainMenu');
     for (let i = 0; i < mainMenuElements.length; i++) {
-        mainMenuElements[i].style.display = display;
+        mainMenuElements[i].style.display = 'table';
+    }
+
+    if (display === "block"){
+        let table = document.getElementById('data_table_div')
+            .style.display = 'block'
+        let map_div = document.getElementById('map_div')
+        map_div.style.display = 'table'
+
+        let popup = document.getElementById('popup')
+            .style.display = 'table'
     }
     table.replaceData(g_csv_file.data).then(function() {
         table.setPageSize(10);
@@ -38,6 +48,10 @@ function setMainMenuDisplay(display) {
         .catch(function(error){
             console.log(error)
         })
+
+    let popup_card = document.getElementById('popup');
+    popup_card.style.display="flex"
+    popup_card.innerHTML = "Pick a place to go to :)"
 }
 
 function setDropZoneDisplay(display) {

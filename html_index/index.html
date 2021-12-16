@@ -10,34 +10,33 @@
 </head>
 <body class="body">
 
-   <div id="button_panel" class="mainMenu">
-       <ul id="nav_list">
-      <li class="nav_elem"><button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button></li>
-           <li class="nav_elem"> <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button></li>
-       </ul>
-   </div>
-
-
-
-
-   <div id="csv_dropzone" class="dropzone" draggable="false">
-        <img  src="../images/upload.png" alt="upload.png" height="100" draggable="false">
-        <header ><B>Drag and drop csv file to upload</B></header>
+    <div id="csv_dropzone" class="dropzone" draggable="false">
+        <img  id="drop_image" src="../images/upload.png" alt="upload.png"  draggable="false">
     </div>
 
-   <div id="data_table_div" class="mainMenu">
-   </div>
+    <div id="table_and_map" class="mainMenu">
+        <div id="buttons" class="row">
+            <ul id="nav_list">
+<!--                <div id="button_panel" class="mainMenu"></div>-->
+                <li class="nav_elem column"><button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button></li>
+                <li class="nav_elem column"> <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button></li>
+            </ul>
+        </div>
 
-    <div id="map_div" class="mainMenu">
+        <div id="table" class="row">
+            <div id="data_table_div" class="mainMenu"></div>
+        </div>
 
+        <div id="map_and_card" class="row">
+            <div class="column">
+                <div id="map_div" class="mainMenu"></div>
+            </div>
+            <div class="column">
+                <div id="popup" class="mainMenu column"></div>
+            </div>
+        </div>
     </div>
-   <div id="map_card_div">
 
-   </div>
-
-   <div id="popup">
-
-   </div>
 
    <span id="footnote">This is a funny footnote</span>
 

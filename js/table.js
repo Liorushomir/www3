@@ -76,6 +76,7 @@ function rowSelected(row){
         .addTo(map);
 
 
+    console.log("Should pop up")
     fillInfopopupCard(row)
 }
 
@@ -95,10 +96,10 @@ function rowUnSelected(row){
 function fillInfopopupCard(row){
     console.log("fill card")
     let popup_card = document.getElementById('popup');
-    popup_card.style.display="flex";
-    popup_card.innerHTML += "Info card"
-    const info = row._row.data
-    console.log(row._row.data)
+    // popup_card.style.display="flex";
+    popup_card.innerHTML = "Info card"
+    const info = row.getData()
+    console.log(row.getData())
     for (let key in info) {
         let value = info[key];
         if (key === ""){
@@ -108,10 +109,10 @@ function fillInfopopupCard(row){
     }
 }
 
-function removepopupCard(){
+function clearpopupCard(){
     let popup_card = document.getElementById('popup')
-    popup_card.innerHTML = "";
-    popup_card.style.display="none";
+    popup_card.innerHTML = "Pick a place to go :)";
+    // popup_card.style.display="none";
 
 
 }

@@ -8,6 +8,7 @@ body{
 
 }
 
+
 .mainMenu{
     display:none;
     margin:30px;
@@ -15,7 +16,7 @@ body{
 
 #csv_dropzone{
     position:absolute;
-    left:25%;
+    left:20%;
     min-height: 200px;
     min-width: 400px;
 
@@ -31,7 +32,6 @@ body{
     text-align: center;
     font-family: sans-serif;
     cursor: default;
-    /*border: 10px dashed #697e87;*/
     border: 10px dashed #1a1a1a;
     border-radius: 10%;
 }
@@ -67,9 +67,10 @@ body{
     cursor: pointer;
     transition-duration: 0.4s;
     margin: 10px;
+    left: 25%;
 }
 .button:hover{
-    background-color: lightskyblue; /* Green */
+    background-color: crimson; /* Green */
     color: white;
 }
 
@@ -78,23 +79,13 @@ body{
     align-self: center;
     position: center;
     max-width: 80%;
-    /*height: 500px;*/
     min-height: 100px;
     min-width: 100px;
-   /* max-height: 300px;*/
     margin: auto;
 
 
 }
 
-
-#map_div {
-    height: 600px;
-    width: 80%;
-    margin:auto;
-    margin-block-start: 30px;
-    margin-block-end: 30px;
-}
 
 
 #nav_list{
@@ -128,35 +119,59 @@ body{
 
 }
 
-#popup{
-    display: none;
-    width: 100px;
-    justify-items: center;
-    font-family: sans-serif;
-    font-size: larger;
-    color: #1a1a1a;
-    background-color: #b2534c;
 
 
-    position:absolute;
-    left:20%;
-    min-height: 200px;
-    min-width: 500px;
 
-    max-height: 500px;
-    max-width: 800px;
 
-    padding: 2%;
-    margin: 10%;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    /*justify-content: center;*/
-    cursor: default;
-    border: 5px #1a1a1a;
-    border-radius: 3%;
+#map {
+    min-height: 600px;
+    min-width: 30%;
+    /*margin:auto;*/
+    margin-block-start: 30px;
+    margin-block-end: 30px;
+    border:2px solid #009900;
+    /*float:left;*/
+    margin-left:60px;
+    box-sizing: border-box;
 
 }
+
+#popup {
+    display: none;
+    font-family: sans-serif;
+    font-size: larger;
+    text-align: left;
+    color: #1a1a1a;
+    background-color: #b2534c;
+    border-radius: 3%;
+
+    flex-direction: column;
+    float:left;
+    box-sizing: border-box;
+}
+
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    min-height: 100px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    box-sizing: border-box;
+}
+
+
+
+
 
 #footnote{
     position: relative;
