@@ -6,7 +6,7 @@ const dropzone_wrapper = document.getElementsByClassName('dropzone_wrapper')[0]
 const csv_dropzone_visual_elems = document.querySelectorAll('.csv_dropzone_visuals');
 const goto_upload_btn =  document.getElementById('upload_another_file_btn')
 const download_csv_btn =  document.getElementById('download_csv_btn')
-const tabple_map_wrapper = document.getElementsByClassName('table_map_wrapper')[0]
+const table_map_wrapper = document.getElementsByClassName('table_map_wrapper')[0]
 
 const display = 'display'
 const remove = 'remove'
@@ -80,6 +80,9 @@ function set_drag_and_drop_page(display_setting){
         dropzone_wrapper.style.display = "grid";
         csv_dropzone.style.opacity = 1;
         entered_dropzone_counter = 0;
+        let body = document.getElementsByTagName('body')[0]
+        body.style.overflowY = 'hidden'
+        csv_dropzone.style
     }
     else if (display_setting === remove){
         dropzone_wrapper.style.display = "none";
@@ -92,14 +95,16 @@ function set_drag_and_drop_page(display_setting){
 
 function set_map_and_table_page(display_setting){
     if (display_setting === display){
-        tabple_map_wrapper.style.display = "grid";
+        table_map_wrapper.style.display = "grid";
         display_buttons()
         display_table()
         display_map()
         display_popup()
+        let body = document.getElementsByTagName('body')[0]
+        body.style.overflowY = 'auto'
     }
     else if (display_setting === remove){
-        tabple_map_wrapper.style.display = "none"
+        table_map_wrapper.style.display = "none"
     }
     else{
         alert("Something is very wrong! This is a test, lease ignore")

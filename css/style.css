@@ -3,9 +3,14 @@ body{
     height: 100%;
     background-image: url("../images/airbnb_background.jpg");
     background-color: #879ba3;
-    background-size: cover;
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat no-repeat;*/
     user-select: none;
     box-shadow:inset 0 0 0 2000px rgba(221, 96, 100, 0.2);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    overflow-y: hidden;
 }
 
 
@@ -14,7 +19,7 @@ body{
     grid-area: dropzone;
     background-image: url("../images/upload.png");
     background-repeat: no-repeat no-repeat;
-    background-size: 30%;
+    background-size: 60%;
     background-position: center;
     background-attachment: local;
     border: 10px dashed #251617;
@@ -24,14 +29,16 @@ body{
 
 }
 .dropzone:hover{
-    opacity: 0.5;
+    opacity: 0.5 !important;
 }
 
-
+.footnote{  }
 .dropzone_wrapper{
     display: grid;
     place-content: center;
-    grid-template-areas: 'dropzone';
+    grid-template-areas:
+            'dropzone'
+            'footer';
     height: 100vh;
 }
 
@@ -73,15 +80,14 @@ body{
     min-height: 400px;
     margin: auto;
 }
-.footnote{ grid-area: footer }
+
 
 .table_map_wrapper{
     display: none;
     grid-template-areas:
     'upload upload upload download download download'
     'data_table_div data_table_div data_table_div data_table_div data_table_div data_table_div '
-    'map_div map_div map_div map_div map_div popup_div'
-    'footer footer footer footer footer footer';
+    'map_div map_div map_div map_div map_div popup_div';
     grid-gap: 10px;
     padding: 10px;
 }
