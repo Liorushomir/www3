@@ -1,4 +1,3 @@
-let entered_dropzone_counter=0 //used to prevent opacity from changing when "leaving dragzone because entering children"
 
 
 /* events fired on the draggable target */
@@ -12,24 +11,20 @@ csv_dropzone.addEventListener("dragenter", (event) => {
     // highlight potential drop target when the draggable element enters it
     event.preventDefault();
     console.log("dragenter");
-    entered_dropzone_counter++;
 });
 
 csv_dropzone.addEventListener("dragleave", (event) => {
     // reset background of potential drop target when the draggable element leaves it
     event.preventDefault();
     console.log("dragleave");
-    entered_dropzone_counter--;
-
-    if(entered_dropzone_counter === 0){
-        event.target.style.opacity = '1';
-    }
+    event.target.style.opacity = '1';
 });
 
 csv_dropzone.addEventListener("drop", (event)=> {
     // prevent default action (open as link for some elements)
     event.preventDefault()
-    csv_dropzone.style.opacity=1;
+    console.log("drop");
+    csv_dropzone.style.opacity = '1';
 
 
     let files = event.dataTransfer.files
@@ -66,21 +61,18 @@ csv_dropzone.addEventListener("drop", (event)=> {
 
 csv_dropzone_visual_elems.forEach(el => el.addEventListener('dragleave', event => {
     if (event.dataTransfer.files === undefined){
-        console.log("No fiels attached")
+        console.log("No files attached")
         return;
     }
     event.preventDefault();
-
-    entered_dropzone_counter--;
 }));
 
 csv_dropzone_visual_elems.forEach(el => el.addEventListener('dragenter', event => {
     if (event.dataTransfer.files === undefined){
-        console.log("No fiels attached")
+        console.log("No files attached")
         return;
     }
     event.preventDefault();
-    entered_dropzone_counter++;
 
 }));
 

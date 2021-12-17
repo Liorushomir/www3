@@ -1,18 +1,40 @@
 html,
 body{
     height: 100%;
-    background-image: url("../images/airbnb-maps.jpg");
+    background-image: url("../images/airbnb_background.jpg");
     background-color: #879ba3;
     background-size: cover;
     user-select: none;
+    box-shadow:inset 0 0 0 2000px rgba(221, 96, 100, 0.2);
+}
+
+
+.dropzone{
+    /*position: absolute;*/
+    grid-area: dropzone;
+    background-image: url("../images/upload.png");
+    background-repeat: no-repeat no-repeat;
+    background-size: 30%;
+    background-position: center;
+    background-attachment: local;
+    border: 10px dashed #251617;
+    border-radius: 10%;
+    width: clamp(200px, 400px, 1000px);
+    height: clamp(200px, 400px, 1000px);
 
 }
+.dropzone:hover{
+    opacity: 0.5;
+}
+
 
 .dropzone_wrapper{
     display: grid;
     place-content: center;
+    grid-template-areas: 'dropzone';
     height: 100vh;
 }
+
 
 .blank{ grid-area: blank }
 .upload_btn{
@@ -47,7 +69,7 @@ body{
     text-align: left;
     color: #1a1a1a;
     background-color: #b2534c;
-    width: clamp(100px, 70%, 1000px);
+    width: clamp(100px, 70%, 100%);
     min-height: 400px;
     margin: auto;
 }
@@ -58,44 +80,17 @@ body{
     grid-template-areas:
     'upload upload upload download download download'
     'data_table_div data_table_div data_table_div data_table_div data_table_div data_table_div '
-    'map_div map_div map_div popup_div popup_div popup_div'
+    'map_div map_div map_div map_div map_div popup_div'
     'footer footer footer footer footer footer';
     grid-gap: 10px;
     padding: 10px;
 }
 
 
-.dropzone{
-    background-image: url("../images/upload.png");
-    background-position: center;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position-x: center;
-    border: 10px dashed #1a1a1a;
-    border-radius: 10%;
-    /*display: flex;*/
-    align-items: center;
-    justify-content: center;
 
-    width: clamp(200px, 500px, 1000px);
-    height: clamp(200px, 500px, 1000px);
-}
-.dropzone:hover{
-    opacity: 0.5;
-}
-.csv_dropzone_visuals{
-    /*make it non draggable*/
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
 
 .button{
-    --color: #fff;
-    --background: #2B3044;
-    --background-hover: var(--background);
+
     padding: 8px 28px;
     border-radius: 20px;
     line-height: 24px;

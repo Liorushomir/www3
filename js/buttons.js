@@ -16,9 +16,7 @@ download_csv_btn.addEventListener('click', ev => {
 })
 
 
-window.addEventListener('resize', function(){
-    air_bnb_table.redraw();
-});
+
 
 
 

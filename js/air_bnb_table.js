@@ -47,6 +47,10 @@ air_bnb_table.setFilter(function(data, filterParams) {
    // return true
 })
 
+window.addEventListener('resize', function(){
+    air_bnb_table.redraw();
+});
+
 function rowSelected(row){
     console.log("New row selected");
     let row_data = row.getData()
