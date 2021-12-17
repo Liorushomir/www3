@@ -86,8 +86,17 @@ function rowSelected(row){
 
 function fieldToName(field){
     let res = field.charAt(0).toUpperCase() + field.slice(1);
-    res = res.replace("_", " ")
+    res = res.replaceAll("_", " ")
 
+    return res
+}
+
+function valueDisplay(value, key){
+    let res = value.charAt(0).toUpperCase() + value.slice(1);
+    res = res.replaceAll("_", " ")
+    if (key === 'price'){
+        res+='$'
+    }
     return res
 }
 
@@ -101,7 +110,7 @@ function fillInfopopupCard(row){
     console.log("fill card")
     let popup_card = document.getElementById('popup');
     // popup_card.style.display="flex";
-    popup_card.innerHTML = "Info card"
+    popup_card.innerHTML = "<b><u>Info card</b></u>"
     const info = row.getData()
     console.log(row.getData())
     for (let key in info) {
@@ -109,11 +118,11 @@ function fillInfopopupCard(row){
         if (key === ""){
             continue;
         }
-        popup_card.innerHTML += "<li>" + key.replace('_', ' ') + " : " + value.replace('_', ' ' ) + "</li>"
+        popup_card.innerHTML += "<li><b><u>" + fieldToName(key) + "</u></b> : " + valueDisplay(value, key) + "</li>"
     }
 }
 
-function clearpopupCard(){
+function clearPopupCard(){
     let popup_card = document.getElementById('popup')
     popup_card.innerHTML = "Pick a place to go :)";
     // popup_card.style.display="none";

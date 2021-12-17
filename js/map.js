@@ -15,10 +15,12 @@ function removeAllPopups() {
     for (let popup of popups) {
         popup.remove();
     }
-    clearpopupCard();
+    clearPopupCard();
 }
 
 map.on('dragstart', ()=> {
     removeAllPopups();
+    let selected_row = air_bnb_table.getSelectedRows()[0];
+    air_bnb_table.deselectRow(selected_row);
 })
 
