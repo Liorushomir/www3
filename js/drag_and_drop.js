@@ -50,7 +50,7 @@ csv_dropzone.addEventListener("drop", (event)=> {
             }
             else{
                 event.target.style.opacity = '1';
-                alert("The uploaded file does nto fit the AirBnB format!");
+                alert("The uploaded file does not fit the AirBnB format!");
             }
 
         }
