@@ -29,7 +29,7 @@ csv_dropzone.addEventListener("dragleave", (event) => {
 csv_dropzone.addEventListener("drop", (event)=> {
     // prevent default action (open as link for some elements)
     event.preventDefault()
-    //csv_dropzone.style.opacity=1;
+    csv_dropzone.style.opacity=1;
 
 
     let files = event.dataTransfer.files
@@ -51,7 +51,7 @@ csv_dropzone.addEventListener("drop", (event)=> {
             console.log("results", results);
             console.log("results", results.meta.fields);
             if (validate_headers(results.meta.fields)){
-                switch_to_main_page();
+                switch_to_table_map_display();
             }
             else{
                 event.target.style.opacity = '1';

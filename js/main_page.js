@@ -1,7 +1,7 @@
 goto_upload_btn.addEventListener('click', ev => {
     ev.preventDefault()
     clearpopupCard()
-    switch_to_upload_page()
+    switch_to_drag_and_drop_page()
 })
 
 download_csv_btn.addEventListener('click', ev => {
@@ -17,7 +17,7 @@ download_csv_btn.addEventListener('click', ev => {
 
 
 window.addEventListener('resize', function(){
-    table.redraw();
+    air_bnb_table.redraw();
 });
 
 

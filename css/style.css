@@ -8,38 +8,75 @@ body{
 
 }
 
-
-.mainMenu{
-    display:none;
-    margin:30px;
+.dropzone_wrapper{
+    display: grid;
+    place-content: center;
+    height: 100vh;
 }
 
-#csv_dropzone{
-    position:absolute;
-    left:20%;
-    min-height: 200px;
-    min-width: 400px;
+.blank{ grid-area: blank }
+.upload_btn{ grid-area: upload;}
+.download_btn{ grid-area: download;}
+.data_table{
+    grid-area: data_table_div;
+    align-content: center;
+    align-self: center;
+    position: center;
+    width: clamp(500px, 80%, 1000px);
+    min-height: 100px;
 
-    max-height: 500px;
-    max-width: 600px;
+    margin: auto;
+}
+.map {
+    grid-area: map_div;
+    min-height: 600px;
+    width: clamp(500px, 50%, 1000px);
+    /*margin:auto;*/
+    margin-block-start: 30px;
+    margin-block-end: 30px;
 
-    padding: 2%;
-    margin: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+}
+.popup_card{
+    grid-area: popup_div;
     font-family: sans-serif;
-    cursor: default;
+    font-size: larger;
+    text-align: left;
+    color: #1a1a1a;
+    background-color: #b2534c;
+    width: clamp(500px, 50%, 1000px);
+}
+.footnote{ grid-area: footer }
+
+.table_map_wrapper{
+    display: grid;
+    grid-template-areas:
+    'upload upload download download'
+    'data_table_div data_table_div data_table_div data_table_div '
+    'map_div map_div popup_div popup_div'
+    'footer footer footer footer';
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+
+.dropzone{
+    background-image: url("../images/upload.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position-x: center;
     border: 10px dashed #1a1a1a;
     border-radius: 10%;
-}
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
 
+    width: clamp(200px, 500px, 1000px);
+    height: clamp(200px, 500px, 1000px);
+}
 .dropzone:hover{
     opacity: 0.5;
 }
-
 .csv_dropzone_visuals{
     /*make it non draggable*/
     -webkit-user-drag: none;
@@ -50,7 +87,6 @@ body{
 }
 
 .button{
-   display: none;
     --color: #fff;
     --background: #2B3044;
     --background-hover: var(--background);
@@ -74,27 +110,10 @@ body{
     color: white;
 }
 
-#data_table_div{
-    align-content: center;
-    align-self: center;
-    position: center;
-    max-width: 80%;
-    min-height: 100px;
-    min-width: 100px;
-    margin: auto;
-
-
-}
 
 
 
-#nav_list{
-    list-style-type: none;
-}
 
-.nav_elem{
-    display: inline-block;
-}
 
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
     white-space: normal;
@@ -123,32 +142,9 @@ body{
 
 
 
-#map {
-    min-height: 600px;
-    min-width: 30%;
-    /*margin:auto;*/
-    margin-block-start: 30px;
-    margin-block-end: 30px;
-    border:2px solid #009900;
-    /*float:left;*/
-    margin-left:60px;
-    box-sizing: border-box;
 
-}
 
-#popup {
-    display: none;
-    font-family: sans-serif;
-    font-size: larger;
-    text-align: left;
-    color: #1a1a1a;
-    background-color: #b2534c;
-    border-radius: 3%;
 
-    flex-direction: column;
-    float:left;
-    box-sizing: border-box;
-}
 
 
 

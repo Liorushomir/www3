@@ -1,4 +1,4 @@
-const table = new Tabulator("#data_table_div", {
+const air_bnb_table = new Tabulator("#data_table_div", {
     //data:tabledata, //assign data to table
     autoColumns:true, //create columns from data field names
     layout:"fitColumns",
@@ -42,7 +42,7 @@ const table = new Tabulator("#data_table_div", {
 });
 
 //filters blank lines
-table.setFilter(function(data, filterParams) {
+air_bnb_table.setFilter(function(data, filterParams) {
     return !(data.name===undefined)
    // return true
 })

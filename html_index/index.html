@@ -8,37 +8,25 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>AirBnB</title>
 </head>
-<body class="body">
-
-    <div id="csv_dropzone" class="dropzone" draggable="false">
-        <img  id="drop_image" src="../images/upload.png" alt="upload.png"  draggable="false">
+<body>
+    <div class="dropzone_wrapper">
+        <div id="csv_dropzone" class="dropzone" draggable="false"></div>
     </div>
-
-    <div id="table_and_map" class="mainMenu">
-        <div id="buttons" class="row">
-            <ul id="nav_list">
-<!--                <div id="button_panel" class="mainMenu"></div>-->
-                <li class="nav_elem column"><button id='goto_upload_view_btn' class="mainMenu button" type="button">Upload Another File</button></li>
-                <li class="nav_elem column"> <button id='download_csv_btn' class="button mainMenu" type="button">Download As CSV</button></li>
-            </ul>
+    <div class="table_map_wrapper">
+        <div id="upload_btn" class="upload_btn">
+            <button id="upload_another_file_btn" class="button" type="button">Upload Another File</button>
         </div>
-
-        <div id="table" class="row">
-            <div id="data_table_div" class="mainMenu"></div>
+        <div id="download_btn" class="download_btn">
+            <button id='download_csv_btn' class="button" type="button">Download As CSV</button>
         </div>
-
-        <div id="map_and_card" class="row">
-            <div class="column">
-                <div id="map_div" class="mainMenu"></div>
-            </div>
-            <div class="column">
-                <div id="popup" class="mainMenu column"></div>
-            </div>
-        </div>
+        <div id="data_table_div" class="data_table" ></div>
+        <div id="map_div" class="map"></div>
+        <div id="popup" class="popup_card"></div>
+        <div class="blank"></div>
+        <span class="footnote">This is a funny footnote</span>
     </div>
 
 
-   <span id="footnote">This is a funny footnote</span>
 
 
 </body>
@@ -52,7 +40,7 @@
 <script src="../js/utils.js"></script>
 <script src="../js/drag_and_drop.js"></script>
 <script src="../js/main_page.js"> </script>
-<script src="../js/table.js"></script>
+<script src="../js/air_bnb_table.js"></script>
 <script src="../js/map.js"></script>
 <!-- Bootstrap v2.3.2 -->
     <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/bootstrap-2.3.2.min.css" />
