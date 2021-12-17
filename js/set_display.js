@@ -4,7 +4,7 @@ let g_raw_csv_file = undefined
 const csv_dropzone = document.getElementById('csv_dropzone')
 const dropzone_wrapper = document.getElementsByClassName('dropzone_wrapper')[0]
 const csv_dropzone_visual_elems = document.querySelectorAll('.csv_dropzone_visuals');
-const goto_upload_btn =  document.getElementById('goto_upload_view_btn')
+const goto_upload_btn =  document.getElementById('upload_another_file_btn')
 const download_csv_btn =  document.getElementById('download_csv_btn')
 const tabple_map_wrapper = document.getElementsByClassName('table_map_wrapper')[0]
 
@@ -60,26 +60,14 @@ function setMainMenuDisplay(display) {
     popup_card.innerHTML = "Pick a place to go to :)"
 }
 
-function setDropZoneDisplay(display) {
-    let dropZoneElementsdocument = document.getElementsByClassName('dropzone')
-    for (let i = 0; i < dropZoneElementsdocument.length; i++) {
-        dropZoneElementsdocument[i].style.display = display;
-        dropZoneElementsdocument[i].style.opacity = '1';
-    }
-    entered_dropzone_counter = 0
-}
 
 function switch_to_table_map_display(){
-    // setMainMenuDisplay('block');
-    // setDropZoneDisplay('none');
     set_drag_and_drop_page(remove);
     set_map_and_table_page(display);
 
 }
 
 function switch_to_drag_and_drop_page(){
-    // setMainMenuDisplay('none');
-    // setDropZoneDisplay('block');
     set_map_and_table_page(remove);
     set_drag_and_drop_page(display);
     g_csv_file = undefined;
