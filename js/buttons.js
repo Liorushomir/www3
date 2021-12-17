@@ -1,6 +1,6 @@
 goto_upload_btn.addEventListener('click', ev => {
     ev.preventDefault()
-    clearPopupCard()
+    initiatePopupCard()
     switch_to_drag_and_drop_page()
 })
 

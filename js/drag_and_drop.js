@@ -46,7 +46,7 @@ csv_dropzone.addEventListener("drop", (event)=> {
             console.log("results", results);
             console.log("results", results.meta.fields);
             if (validate_headers(results.meta.fields)){
-                switch_to_table_map_display();
+                switchToTableMapDisplay();
             }
             else{
                 event.target.style.opacity = '1';

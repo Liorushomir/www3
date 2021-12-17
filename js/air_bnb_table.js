@@ -109,10 +109,8 @@ function rowUnSelected(row){
 function fillInfopopupCard(row){
     console.log("fill card")
     let popup_card = document.getElementById('popup');
-    // popup_card.style.display="flex";
     popup_card.innerHTML = "<b><u>Info card</b></u>"
     const info = row.getData()
-    console.log(row.getData())
     for (let key in info) {
         let value = info[key];
         if (key === ""){
@@ -122,10 +120,9 @@ function fillInfopopupCard(row){
     }
 }
 
-function clearPopupCard(){
+function initiatePopupCard(){
     let popup_card = document.getElementById('popup')
-    popup_card.innerHTML = "Pick a place to go :)";
-    // popup_card.style.display="none";
+    popup_card.innerHTML = "<b>Pick a place to go :)</b>";
 
 
 }

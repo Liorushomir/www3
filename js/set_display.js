@@ -10,61 +10,9 @@ const table_map_wrapper = document.getElementsByClassName('table_map_wrapper')[0
 
 const display = 'display'
 const remove = 'remove'
-
-
-function setMainMenuDisplay(display) {
-    let mainMenuElements = document.getElementsByClassName('mainMenu');
-    for (let i = 0; i < mainMenuElements.length; i++) {
-        mainMenuElements[i].style.display = 'table';
-    }
-
-    if (display === "block"){
-        let table = document.getElementById('data_table_div')
-            .style.display = 'block'
-        let map_div = document.getElementById('map_div')
-        map_div.style.display = 'table'
-
-        let popup = document.getElementById('popup')
-            .style.display = 'table'
-    }
-    air_bnb_table.replaceData(g_csv_file.data).then(function() {
-        air_bnb_table.setPageSize(10);
-        map.resize()
-
-
-        for(const row of air_bnb_table.getData()){
-            let x = row['longitude']
-            let y = row['latitude']
-
-            if(isNaN(x) || isNaN(y)){
-                continue
-            }
-
-            const el = document.createElement('div')
-            el.className='marker'
-
-
-            new mapboxgl.Marker(el).setLngLat([x,y]).addTo(map)
-        }
-
-        let first_row = air_bnb_table.getData().find(el=> !isNaN(el['latitude']) && !isNaN(el['longitude']))
-        map.jumpTo({center:[first_row['longitude'], first_row['latitude']], zoom:14})
-
-    })
-        .catch(function(error){
-            console.log(error)
-        })
-
-    let popup_card = document.getElementById('popup');
-    popup_card.style.display="flex"
-    popup_card.innerHTML = "Pick a place to go to :)"
-}
-
-
-function switch_to_table_map_display(){
+function switchToTableMapDisplay(){
     set_drag_and_drop_page(remove);
     set_map_and_table_page(display);
-
 }
 
 function switch_to_drag_and_drop_page(){
@@ -96,10 +44,8 @@ function set_drag_and_drop_page(display_setting){
 function set_map_and_table_page(display_setting){
     if (display_setting === display){
         table_map_wrapper.style.display = "grid";
-        display_buttons()
         display_table()
-        display_map()
-        display_popup()
+        initiatePopupCard()
         let body = document.getElementsByTagName('body')[0]
         body.style.overflowY = 'auto'
     }
@@ -142,15 +88,3 @@ function display_table(){
         })
 }
 
-function display_map(){
-
-}
-
-function display_popup(){
-    let popup_card = document.getElementById('popup');
-    popup_card.innerHTML = "Pick a place to go to :)"
-}
-
-function display_buttons(){
-
-}
