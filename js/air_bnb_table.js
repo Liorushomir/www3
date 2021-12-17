@@ -57,8 +57,9 @@ function rowSelected(row){
     let x = row_data['longitude']
     let y = row_data['latitude']
 
-    if (x === undefined || y === undefined || x === "none" || y === "none"){
+    if (!x || !y){
         removeAllPopups()
+        alert('This airbnb refused to disclose their location, I would be worried to go there!')
         return;
     }
     map.flyTo({center:[x,y], essential:true, zoom:14})
@@ -69,7 +70,7 @@ function rowSelected(row){
 
     let popup_html = ""
     // let columns = table.getColumns()
-    popup_html = popup_html+ "<b><u>"+ "name" + "</b></u>" + ": " + row_data["name"] + "<br>"
+    popup_html = popup_html+ "<b>" + row_data["name"] + "</b><br>"
 
     let offsetHeight = document.getElementById('map_div').offsetHeight;
 
@@ -113,7 +114,7 @@ function fillInfopopupCard(row){
     const info = row.getData()
     for (let key in info) {
         let value = info[key];
-        if (key === ""){
+        if (key === "" || !value){
             continue;
         }
         popup_card.innerHTML += "<li><b><u>" + fieldToName(key) + "</u></b> : " + valueDisplay(value, key) + "</li>"
